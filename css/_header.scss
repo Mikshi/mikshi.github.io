@@ -1,0 +1,140 @@
+.header-pre-menu__wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  // padding-top: 14px;
+  // padding-bottom: 100px;
+  margin-top: 14px;
+  margin-bottom: 100px;
+}
+.header-pre-menu__sub-list{
+  display: none;
+  // display: flex;
+  // justify-content: space-between;
+  // align-items: center;
+}
+.header-pre-menu__sub-list-item-link{
+  padding: 14px;
+}
+.logo-menu__link-img{
+  height: 44px;
+}
+.logo-menu__link{
+  display: flex;
+}
+.icon-menu{
+  font-size: 28px;
+  color: black;
+}
+
+.header-hero__animation-text{
+  position: absolute;
+  width: max-content;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.h1-hero__wrapper{
+  color: white;
+  margin-top: 15px;
+  font-size: 32px;
+  line-height: 44px;    
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.h1-hero{
+  background: black;
+  padding: 10px;
+}
+.header-hero__subline{
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 25px;
+  padding-bottom: 15px;
+}
+
+.header-hero__animation{
+  position: relative;
+  transition: transform 0.3s ease;
+}
+.header-hero__animation:hover{
+  transform: translate3d(0px, 0px, 0px) scale3d(1.03, 1.03, 1.03) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;
+}
+.header-hero__animation::before{  
+  content: '';
+  position: absolute;
+  display: flex;
+  height: 50%;
+  width: 50%;
+  z-index: 1;
+  background: white;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.header-hero__animation-video{
+  border-radius: 50%;
+  width: 100%;
+  background-image:url("../img/video/Einweihungsparty-poster.jpg");
+  background-size: cover;
+}
+.header-menu{
+  background: black;
+}
+.header-menu__wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 160px;
+  margin-bottom: 60px;  
+}
+.logo-menu{
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.logo-menu__img{
+  height: 44px;
+}
+.icon-logo{
+  font-size: 44px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.icon-arrow{
+  font-size: 26px;
+  padding-right: 50px;
+  padding-left: 50px;
+  border-radius: 0 0 50% 50%;
+}
+.header-menu__list-item-link{
+  color: white;
+}
+.header-menu__sub-list-item-link{
+  color: white;
+  padding: 14px;
+}
+.header-menu__sub-list-item:hover{  
+  text-decoration: underline;
+}
+.header-menu__sub-list-item-link:hover{
+  color: #c4c4c4;  
+}
+.header-menu__link-link{
+  padding: 14px 0px 14px 14px;
+}
+.menu-btn{
+  color: white;  
+  font-size: 28px;
+}
+.header-menu__body{
+  // width: 60%;
+}
+.header-menu__sub-list{
+  display: none;
+  // display: flex;
+  // justify-content: space-between;
+}
