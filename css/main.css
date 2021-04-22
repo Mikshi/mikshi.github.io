@@ -2389,9 +2389,9 @@ button {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-top: 14px;
   margin-bottom: 100px;
   min-height: 60px;
+  color: black;
 }
 
 @media (min-width: 992px) {
@@ -2455,10 +2455,18 @@ button {
   left: 50%;
   bottom: 0;
   right: 0;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
   text-align: center;
+  -webkit-transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 0);
+          transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 0);
+  -webkit-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+
+.header-hero__animation-text._active {
+  will-change: transform;
+  -webkit-transform: translate3d(-50%, -50%, 0) scale3d(1, 1, 1);
+          transform: translate3d(-50%, -50%, 0) scale3d(1, 1, 1);
 }
 
 .h1-hero__wrapper {
@@ -2513,15 +2521,38 @@ button {
   }
 }
 
-.header-hero__animation {
-  position: relative;
+.header-hero__animation-wrapper {
+  width: 65%;
+  -webkit-transform: translate(0px, 0%);
+      -ms-transform: translate(0px, 0%);
+          transform: translate(0px, 0%);
+  opacity: 1;
+  -webkit-transition: all 0.8s ease 0s;
+  -o-transition: all 0.8s ease 0s;
+  transition: all 0.8s ease 0s;
 }
 
-.header-hero__animation:hover {
-  -webkit-transform: translate3d(0px, 0px, 0px) scale3d(1.03, 1.03, 1.03) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
-          transform: translate3d(0px, 0px, 0px) scale3d(1.03, 1.03, 1.03) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
+.header-hero__animation-wrapper._active {
+  -webkit-transform: translate(0px, 0px);
+      -ms-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  opacity: 1;
+  width: 100%;
+}
+
+.header-hero__animation {
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 0.8s ease 0s;
+  -o-transition: all 0.8s ease 0s;
+  transition: all 0.8s ease 0s;
 }
 
 .header-hero__animation::before {
@@ -2537,9 +2568,17 @@ button {
   border-radius: 50%;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  -webkit-transform: translate3d(-50%, -50%, 0) scale3d(1, 1, 1);
+          transform: translate3d(-50%, -50%, 0) scale3d(1, 1, 1);
+  -webkit-transition: all 0.6s ease-in 0.2s;
+  -o-transition: all 0.6s ease-in 0.2s;
+  transition: all 0.6s ease-in 0.2s;
+}
+
+.header-hero__animation._active {
+  -webkit-transition: all 0.8s ease 0s;
+  -o-transition: all 0.8s ease 0s;
+  transition: all 0.8s ease 0s;
 }
 
 .header-hero__animation-video {
@@ -2548,10 +2587,33 @@ button {
   border: 1px solid rgba(196, 196, 196, 0.8);
   background-image: url("../img/video/Einweihungsparty-poster.jpg");
   background-size: cover;
+  -webkit-transform: translate3d(0px, 0px, 0px) scale3d(1.05, 1.05, 1.05) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+          transform: translate3d(0px, 0px, 0px) scale3d(1.05, 1.05, 1.05) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+}
+
+.header-hero__animation-video:hover {
+  -webkit-transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+          transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
 }
 
 .header-menu {
   background: black;
+  color: white;
+  margin-top: 160px;
+  margin-bottom: 60px;
+}
+
+.header-menu._active {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  margin: auto;
+  z-index: 10;
+  -webkit-transition: all 0.8s ease 0s;
+  -o-transition: all 0.8s ease 0s;
+  transition: all 0.8s ease 0s;
 }
 
 .header-menu__wrapper {
@@ -2564,8 +2626,6 @@ button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 160px;
-  margin-bottom: 60px;
 }
 
 .logo-menu {
@@ -2603,9 +2663,13 @@ button {
   }
 }
 
-.header-menu__list-item {
+.header-menu__sub-list-item {
   margin: 0 0 0 26px;
   padding: 10px 0;
+}
+
+.header-menu__sub-list-item:hover {
+  text-decoration: underline;
 }
 
 .header-menu__list-item-link {
@@ -2619,12 +2683,8 @@ button {
 }
 
 .header-menu__sub-list-item-link {
-  color: white;
+  color: inherit;
   padding: 14px 0;
-}
-
-.header-menu__sub-list-item:hover {
-  text-decoration: underline;
 }
 
 .header-menu__sub-list-item-link:hover {
@@ -2661,6 +2721,25 @@ button {
   }
 }
 
+.sticky {
+  position: fixed;
+  background: black;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0 15px;
+  z-index: 10;
+  -webkit-transition: all 0.8s ease 0s;
+  -o-transition: all 0.8s ease 0s;
+  transition: all 0.8s ease 0s;
+}
+
+.sticky + .main-section {
+  padding-top: 120px;
+}
+
 .main-section-about {
   padding-bottom: 60px;
 }
@@ -2688,6 +2767,7 @@ button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-bottom: 40px;
 }
 
 @media (min-width: 992px) {
@@ -2702,6 +2782,7 @@ button {
     -webkit-box-direction: reverse;
         -ms-flex-direction: row-reverse;
             flex-direction: row-reverse;
+    margin-bottom: 0;
   }
 }
 
@@ -2709,6 +2790,23 @@ button {
   font-weight: 600;
   font-size: 36px;
   line-height: 49px;
+  -webkit-transform: translate(0px, 120%);
+      -ms-transform: translate(0px, 120%);
+          transform: translate(0px, 120%);
+  opacity: 0;
+  -webkit-transition: all 0.8s ease 0s;
+  -o-transition: all 0.8s ease 0s;
+  transition: all 0.8s ease 0s;
+}
+
+.main-section-about__title._active {
+  -webkit-transform: translate(0px, 0px);
+      -ms-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  opacity: 1;
+  -webkit-transition: all 0.8s ease 0.4s;
+  -o-transition: all 0.8s ease 0.4s;
+  transition: all 0.8s ease 0.4s;
 }
 
 .main-section-about__foto {
@@ -2738,6 +2836,12 @@ button {
   line-height: 26px;
   padding-bottom: 22px;
   margin-bottom: 0px;
+  overflow: hidden;
+}
+
+.main-section-about__desc:nth-child(2) {
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 @media (min-width: 992px) {
@@ -2745,11 +2849,6 @@ button {
     margin-top: 0px;
     margin-bottom: 0px;
   }
-}
-
-.main-section-about__desc:nth-child(2) {
-  margin-top: 0px;
-  margin-bottom: 0px;
 }
 
 .main-section-about-flex {
@@ -2774,4 +2873,69 @@ button {
 
 .main-section-about__foto-pic-img {
   width: 100%;
+}
+
+.anim-show {
+  -webkit-transform: translate(0px, 110%);
+      -ms-transform: translate(0px, 110%);
+          transform: translate(0px, 110%);
+  opacity: 0;
+  -webkit-transition: all 0.8s ease 0s;
+  -o-transition: all 0.8s ease 0s;
+  transition: all 0.8s ease 0s;
+}
+
+.anim-show._active,
+._active .anim-show {
+  -webkit-transform: translate(0px, 0px);
+      -ms-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  opacity: 1;
+}
+
+.row .sec-1 {
+  -webkit-box-ordinal-group: 1;
+      -ms-flex-order: 0;
+          order: 0;
+}
+
+.row .sec-2 {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+.row .sec-3 {
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
+}
+
+.row .sec-4 {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+
+@media (min-width: 992px) {
+  .row .sec-1 {
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
+  }
+  .row .sec-2 {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .row .sec-3 {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .row .sec-4 {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
 }

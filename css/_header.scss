@@ -2,9 +2,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 14px;
   margin-bottom: 100px;
   min-height: 60px;
+  color: black;
   @include media-breakpoint-up(lg) { 
     min-height: 100px;
   }
@@ -32,6 +32,7 @@
   }
 }
 
+
 .header-hero__animation-text{
   display: flex;
   flex-direction: column;
@@ -42,9 +43,14 @@
   top: 50%;
   left: 50%;
   bottom: 0;
-  right: 0;
-  transform: translate(-50%, -50%);
+  right: 0;  
   text-align: center;
+  transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 0);
+  transition: all 0.5s ease 0s;
+}
+.header-hero__animation-text._active{
+  will-change: transform;
+  transform: translate3d(-50%, -50%, 0) scale3d(1.0, 1.0, 1.0);
 }
 .h1-hero__wrapper{
   color: white;  
@@ -80,41 +86,75 @@
   }
 }
 
+.header-hero__animation-wrapper{
+  width: 65%;
+  transform: translate(0px, 0%);
+  opacity: 1;  
+  transition: all 0.8s ease 0s;  
+}
+.header-hero__animation-wrapper._active {
+  transform: translate(0px, 0px);
+  opacity: 1;
+  width: 100%;
+}
+
 .header-hero__animation{
-  position: relative;
-}
-.header-hero__animation:hover{
-  transform: translate3d(0px, 0px, 0px) scale3d(1.03, 1.03, 1.03) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;
-}
-.header-hero__animation::before{  
-  content: '';
-  position: absolute;
+  position: relative;  
+  overflow: hidden;
+  margin: 0 auto;
   display: flex;
-  height: 50%;
-  width: 50%;
-  z-index: 1;
-  background: white;
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  justify-content: center;
+  transition: all 0.8s ease 0s;  
+  &::before{
+    content: '';
+    position: absolute;
+    display: flex;
+    height: 50%;
+    width: 50%;
+    z-index: 1;
+    background: white;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0) scale3d(1, 1, 1);
+    transition: all 0.6s ease-in 0.2s;
+  }  
 }
+.header-hero__animation._active{
+  
+  transition: all 0.8s ease 0s;  
+}
+
 .header-hero__animation-video{
   border-radius: 50%;
   width: 100%;
   border:1px solid rgba(196, 196, 196, 0.8);
   background-image:url("../img/video/Einweihungsparty-poster.jpg");
   background-size: cover;
+  transform: translate3d(0px, 0px, 0px) scale3d(1.05, 1.05, 1.05) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  &:hover{
+    transform: translate3d(0px, 0px, 0px) scale3d(1.0, 1.0, 1.0) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;
+  }
 }
 .header-menu{
   background: black;
+  color: white;
+  margin-top: 160px;
+  margin-bottom: 60px;  
 }
+.header-menu._active{
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  margin: auto;
+  z-index: 10;
+  transition: all 0.8s ease 0s;
+}
+
 .header-menu__wrapper{
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-top: 160px;
-  margin-bottom: 60px;    
+  align-items: center; 
 }
 .logo-menu{
   padding-top: 8px;
@@ -141,9 +181,12 @@
     font-size: 40px;
   }
 }
-.header-menu__list-item{
+.header-menu__sub-list-item{
   margin: 0 0 0 26px;
   padding: 10px 0;
+  &:hover{
+    text-decoration: underline;
+  }
 }
 .header-menu__list-item-link{
   color: white;
@@ -152,14 +195,11 @@
   }  
 }
 .header-menu__sub-list-item-link{
-  color: white;
+  color: inherit;
   padding: 14px 0;
-}
-.header-menu__sub-list-item:hover{  
-  text-decoration: underline;
-}
-.header-menu__sub-list-item-link:hover{
-  color: #c4c4c4;  
+  &:hover{
+    color: #c4c4c4;  
+  }
 }
 .header-menu__link-link{
   padding: 14px 0px 14px 14px;
@@ -177,4 +217,19 @@
     display: flex;
     align-items: center;
   } 
+}
+.sticky{
+  position: fixed;
+  background: black;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0 15px;
+  z-index: 10;
+  transition: all 0.8s ease 0s;  
+}
+.sticky + .main-section{
+  padding-top: 120px;
 }
