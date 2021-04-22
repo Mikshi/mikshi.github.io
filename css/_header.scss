@@ -141,6 +141,10 @@
     font-size: 40px;
   }
 }
+.header-menu__list-item{
+  margin: 0 0 0 26px;
+  padding: 10px 0;
+}
 .header-menu__list-item-link{
   color: white;
   @include media-breakpoint-up(lg) { 
