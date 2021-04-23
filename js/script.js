@@ -12,8 +12,8 @@
     var sticky = header.offsetTop + hero - 40;   
     style = header.style;
 
-    console.log('all ', sticky);
-    console.log(style);
+    // console.log('all ', sticky);
+    // console.log(style);
     
     function animOnScroll(params){
 
@@ -70,9 +70,11 @@
     animOnScroll();
   }
 
-  //click goto 
+  //click data-goto 
 
-  let menuLinks = document.querySelectorAll('.header-hero__animation-link[data-goto]');
+  let menuLinks = document.querySelectorAll('.header-hero-section__animation-link[data-goto]');
+
+  console.log(menuLinks);
 
   if (menuLinks.length > 0) {
     menuLinks.forEach(menuLink => {
@@ -86,6 +88,7 @@
         let hed = document.querySelector('.header').offsetHeight;
         const gotoBlockValue = gotoBlock.getBoundingClientRect().top + pageYOffset - hed
 
+        console.log(menuLink.dataset.goto);
         console.log(gotoBlock);
 
         window.scrollTo({
