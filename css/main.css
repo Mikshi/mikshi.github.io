@@ -2405,6 +2405,9 @@ button {
 }
 
 .header-pre-menu__sub-list-item-link {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
   padding: 14px;
 }
 
@@ -2433,6 +2436,10 @@ button {
   .icon-menu {
     font-size: 56px;
   }
+}
+
+.header-hero-section {
+  margin-bottom: 160px;
 }
 
 .header-hero-section__animation-text {
@@ -2677,12 +2684,12 @@ button {
   text-decoration: underline;
 }
 
-.header-menu-pre__list-item-link {
+.header-pre-menu__list-item-link {
   color: white;
 }
 
 @media (min-width: 992px) {
-  .header-menu-pre__list-item-link {
+  .header-pre-menu__list-item-link {
     display: none;
   }
 }
@@ -2734,12 +2741,12 @@ button {
   }
 }
 
-.header-menu-pre__sub-list {
+.header-pre-menu__sub-list {
   display: none;
 }
 
 @media (min-width: 992px) {
-  .header-menu-pre__sub-list {
+  .header-pre-menu__sub-list {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -2765,27 +2772,13 @@ button {
 }
 
 .sticky {
-  position: fixed;
-  background: black;
-  width: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: 0;
-  padding: 0 15px;
-  z-index: 10;
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
 
-.sticky + .main-section {
-  padding-top: 120px;
-}
-
 @media (max-width: 1439.98px) {
   .main-section {
-    margin-top: 160px;
     padding-top: 60px;
   }
 }

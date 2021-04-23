@@ -1,6 +1,3 @@
-  
-  
-
 
   const animItems = document.querySelectorAll('.anim-items');
 
@@ -11,14 +8,11 @@
     var hero = document.querySelector('.header-hero-section').offsetHeight;
     var sticky = header.offsetTop + hero - 40;   
     style = header.style;
-
-    // console.log('all ', sticky);
-    // console.log(style);
     
     function animOnScroll(params){
 
-      if (window.pageYOffset > sticky) {
-        // header.classList.add("sticky");
+      if (window.pageYOffset >= sticky) {
+        header.classList.add("sticky");
         style.position = "fixed";
         style.width = "100%";
         style.top = "0";
@@ -27,7 +21,7 @@
         style.margin = "0";
         style.transition = "all 0.3s ease 0s";
       } else {
-        // header.classList.remove("sticky");
+        header.classList.remove("sticky");
         if (window.pageYOffset < sticky) {
           style.position = "static";
           style.width = "100%";
@@ -72,9 +66,7 @@
 
   //click data-goto 
 
-  let menuLinks = document.querySelectorAll('.header-hero-section__animation-link[data-goto]');
-
-  console.log(menuLinks);
+  let menuLinks = document.querySelectorAll('.header-menu__sub-list-item-link[data-goto]');
 
   if (menuLinks.length > 0) {
     menuLinks.forEach(menuLink => {
@@ -83,19 +75,19 @@
 
     function onMenuLinkClick (e) {
       const menuLink = e.target;
+
       if (menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)) {
         const gotoBlock = document.querySelector(menuLink.dataset.goto);
-        let hed = document.querySelector('.header').offsetHeight;
-        const gotoBlockValue = gotoBlock.getBoundingClientRect().top + pageYOffset - hed
-
-        console.log(menuLink.dataset.goto);
-        console.log(gotoBlock);
+        const gotoBlockValue = gotoBlock.getBoundingClientRect().top + pageYOffset - document.querySelector('.header-menu').offsetHeight;
 
         window.scrollTo({
           top: gotoBlockValue,
           behavior:"smooth"
         });
+
         e.preventDefault();
+      }else{
+        console.log('Error Link smooth!');
       }
     }
   }
