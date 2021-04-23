@@ -1,4 +1,13 @@
-.main-section-about{
+
+
+.main-section{
+  @include media-breakpoint-down(lg){
+    margin-top: 160px;
+    padding-top: 60px;
+  }
+}
+
+  .main-section-about{
   padding-bottom: 60px;
   @include media-breakpoint-up(lg) { 
     padding-top: 100px;

@@ -9,36 +9,7 @@
   <link rel="stylesheet" href="css/main.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">  
-  <script src="js/jquery-1.9.1.min.js"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js">
-  <!-- <script>
-    $(function() {
-      menu_top = $('.header-menu').offset().top;       
-      $(window).scroll(function () {             
-        if ($(window).scrollTop() > menu_top) { 
-          if ($('.header-menu').css('position') != 'fixed') {  
-            $('.header-menu').css('position','fixed');  
-            $('.header-menu').css('top','0');          
-            $('.header-menu').css('width','100%');          
-            $('.header-menu').css('margin','auto');          
-            $('.header-menu').css('z-index','10');          
-            $('.header-menu').css('transition','all 0.8s ease 0s');          
-            $('.main-section').css('margin-top','120px'); 
-          }
-        } else {                                 
-          if ($('.header-menu').css('position') == 'fixed') { 
-            $('.header-menu').css('position','');
-            $('.header-menu').css('top','');
-            $('.header-menu').css('width','');          
-            $('.header-menu').css('margin','');          
-            $('.header-menu').css('z-index',''); 
-            $('.header-menu').css('transition',''); 
-            $('.main-section').css('margin-top','');
-          }
-        }
-      });
-    });
-  </script> -->
+  <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js">   -->
 </head>
 <body>
   <header class="header">
@@ -53,9 +24,9 @@
           <nav class="header-menu__body">
             <ul class="header-menu__list">
               <li class="header-menu__list-item">
-                <a href="#" class="header-menu__list-item-link"><span class="icon-menu"></span></a>
+                <a href="#" class="header-menu__list-item-link" aria-label="btn menu" ><span class="icon-menu"></span></a>
                 <ul class="header-menu__sub-list">
-                  <li class="header-menu__sub-list-item"><a href="#" class="header-menu__sub-list-item-link">MENU</a></li>                  
+                  <li class="header-menu__sub-list-item"><a href="#about" class="header-menu__sub-list-item-link">MENU</a></li>                  
                 </ul>
               </li>
             </ul>
@@ -63,20 +34,20 @@
         </div>
       </div>
     </div>
-    <div class="header-hero__section">
+    <div class="header-hero-section">
       <div class="container">
         <div class="header-hero__animation anim-items">
           <div class="header-hero__animation-text anim-items anim-no-hide">
-            <span class="header-hero__subline">VKV Agency</span>  
-            <h1 class="h1-hero__wrapper">
-              <span class="h1-hero">Take your time - use</span>
-              <span class="h1-hero" > our services</span>            
-            </h1>            
-            <div class="header-hero__arrow">
-              <a href="#">
-                <span class="icon-arrow"></span>
-              </a>
-            </div>
+            <a data-goto=".main-section-about" href="#" class="header-hero__animation-link">
+              <span class="header-hero__subline">VKV Agency</span>  
+              <h1 class="h1-hero__wrapper">
+                <span class="h1-hero">Take your time - use</span>
+                <span class="h1-hero" > our services</span>            
+              </h1>            
+              <span class="header-hero__arrow">
+                  <span class="icon-arrow"></span>
+              </span>
+            </a>
           </div>
           <div class="header-hero__animation-wrapper anim-items" data-poster-url="./img/video/Einweihungsparty-poster.jpg" data-video-urls="./img/video/Einweihungsparty-2-transcode.mp4,./img/video/Einweihungsparty-2-transcode.webm" data-autoplay="true" data-loop="true" data-wf-ignore="true">
             <video class="header-hero__animation-video anim-show" autoplay="" loop="" muted="" playsinline="" data-wf-ignore="true">
@@ -87,9 +58,9 @@
         </div>
       </div>
     </div>
-    <div class="header-menu" >
+    <div class="header-menu" id="myHeader_nav" >
       <div class="container">   
-        <div class="header-menu__wrapper" id="myHeader">
+        <div class="header-menu__wrapper">
           <div class="logo-menu">
             <a href="#" class="logo-menu__link">
               <img class="logo-menu__link-img" src="img/logo_nav.svg" alt="logo VKV Agency">
@@ -98,14 +69,14 @@
           <nav class="header-menu__body">
             <ul class="header-menu__list">
               <li class="header-menu__list-item">
-                <a href="#" class="header-menu__list-item-link"><span class="icon-menu menu-btn"></span></a>
+                <a href="#" class="header-menu__list-item-link" aria-label="btn menu" ><span class="icon-menu menu-btn"></span></a>
                 <ul class="header-menu__sub-list">
-                  <li class="header-menu__sub-list-item"><a href="#" class="header-menu__sub-list-item-link">About</a></li>
-                  <li class="header-menu__sub-list-item"><a href="#" class="header-menu__sub-list-item-link">Capabilities</a></li>
-                  <li class="header-menu__sub-list-item"><a href="#" class="header-menu__sub-list-item-link">Agent’s Reward</a></li>
-                  <li class="header-menu__sub-list-item"><a href="#" class="header-menu__sub-list-item-link">Logistic</a></li>
-                  <li class="header-menu__sub-list-item"><a href="#" class="header-menu__sub-list-item-link">Trade</a></li>
-                  <li class="header-menu__sub-list-item"><a href="#" class="header-menu__sub-list-item-link">Contacts</a></li>
+                  <li class="header-menu__sub-list-item"><a data-goto=".main-section-about" href="#about" class="header-menu__sub-list-item-link">About</a></li>
+                  <li class="header-menu__sub-list-item"><a data-goto=".main-section-about" href="#about" class="header-menu__sub-list-item-link">Capabilities</a></li>
+                  <li class="header-menu__sub-list-item"><a data-goto=".main-section-about" href="#about" class="header-menu__sub-list-item-link">Agent’s Reward</a></li>
+                  <li class="header-menu__sub-list-item"><a data-goto=".main-section-about" href="#about" class="header-menu__sub-list-item-link">Logistic</a></li>
+                  <li class="header-menu__sub-list-item"><a data-goto=".main-section-about" href="#about" class="header-menu__sub-list-item-link">Trade</a></li>
+                  <li class="header-menu__sub-list-item"><a data-goto=".main-section-about" href="#about" class="header-menu__sub-list-item-link">Contacts</a></li>
                 </ul>
               </li>
             </ul>
@@ -115,7 +86,7 @@
     </div>
   </header>
   <main class="main-section">
-    <section class="main-section-about">
+    <section class="main-section-about" id="about">
       <div class="container">
         <div class="row">
           <div class="col-lg-5 sec-1">

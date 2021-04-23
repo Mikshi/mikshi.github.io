@@ -2455,6 +2455,7 @@ button {
   left: 50%;
   bottom: 0;
   right: 0;
+  padding: 25px;
   text-align: center;
   -webkit-transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 0);
           transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 0);
@@ -2605,15 +2606,10 @@ button {
   margin-bottom: 60px;
 }
 
-.header-menu._active {
-  position: fixed;
-  top: 0px;
-  width: 100%;
-  margin: auto;
-  z-index: 10;
-  -webkit-transition: all 0.8s ease 0s;
-  -o-transition: all 0.8s ease 0s;
-  transition: all 0.8s ease 0s;
+.header-menu.header-hero__section,
+.header-hero-section.header-menu {
+  -webkit-transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 0);
+          transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 0);
 }
 
 .header-menu__wrapper {
@@ -2695,6 +2691,10 @@ button {
   padding: 14px 0px 14px 14px;
 }
 
+.header-hero__animation-link {
+  padding: inherit;
+}
+
 .menu-btn {
   color: white;
   font-size: 28px;
@@ -2731,13 +2731,20 @@ button {
   margin: 0;
   padding: 0 15px;
   z-index: 10;
-  -webkit-transition: all 0.8s ease 0s;
-  -o-transition: all 0.8s ease 0s;
-  transition: all 0.8s ease 0s;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
 }
 
 .sticky + .main-section {
   padding-top: 120px;
+}
+
+@media (max-width: 1439.98px) {
+  .main-section {
+    margin-top: 160px;
+    padding-top: 60px;
+  }
 }
 
 .main-section-about {
